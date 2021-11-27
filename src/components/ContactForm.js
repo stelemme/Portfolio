@@ -55,7 +55,6 @@ export const FormPage = (props) => {
                 <Form.Label>Bericht</Form.Label>
                 <Form.Control onChange= {handleChange} name="bericht" as="textarea" rows={5} />
             </Form.Group>
-
             <Button className="mt-3" onClick={handleSubmit} variant="dark" type="submit">
                 Verstuur
                 </Button>

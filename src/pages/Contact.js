@@ -1,4 +1,4 @@
-import {FormPage} from "../components/Form";
+import {FormPage} from "../components/ContactForm";
 import {Maps} from "../components/GoogleMaps";
 import { Container, Col, Row } from "react-bootstrap";
 import React from 'react'
