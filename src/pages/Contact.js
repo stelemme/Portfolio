@@ -6,16 +6,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Contact() {
-    return (
-        <div className='mx-3'> 
-            <Container fluid>
-              <Row className='border border-top-0 border-dark'>
-                <Col className='my-3'><FormPage /></Col>
-                <Col className='my-3'><Maps /></Col>
-              </Row>
-            </Container>
-        </div>
-    );   
+  return (
+    <div className='mx-3'> 
+      <Container fluid>
+        <Row className='border border-top-0 border-dark'>
+          <Col className='my-3'>
+            <Row>
+              <FormPage />
+            </Row>
+            <Row className="mt-4">
+              <p>Stef Lemmens<br/>
+              stef.lemmens@ugent.be<br/>
+              Plateaustraat 22<br/>
+              9000 Gent<br/>
+              +32492967818</p>
+            </Row>
+          </Col>
+          <Col className='mt-3'><Maps /></Col>
+        </Row>
+      </Container>
+    </div>
+  );   
 }
 
 
