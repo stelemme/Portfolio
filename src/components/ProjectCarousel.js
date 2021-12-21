@@ -11,9 +11,9 @@ const ProjectCarousel = () => {
       const requestOptions = {
           methode: "GET"
       }
-      const data = await fetch('http://localhost:5000/stef/data/db.json', requestOptions)
+      const data = await fetch('http://localhost:5000/stef/data/projects.json', requestOptions)
       const body = await data.json()
-      setProjects(getRandom(body.projects, 3))
+      setProjects(getRandom(body, 3))
     }
     fetchData()
   }, [])
@@ -33,7 +33,7 @@ const ProjectCarousel = () => {
   return ( 
     <Carousel className="my-3">
       {projects.map((project) => (
-        <Carousel.Item>
+        <Carousel.Item key={project.id}>
           <img
           className="d-block w-100"
           src={project.foto}
