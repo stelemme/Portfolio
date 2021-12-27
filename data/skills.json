@@ -1,0 +1,10 @@
+[
+  { "title": "Autocad", "niveau": "Volledige Beheersing", "id": 1 },
+  { "title": "Rhino", "niveau": "Volledige Beheersing", "id": 2 },
+  { "title": "Grasshopper", "niveau": "Mattige Beheersing", "id": 3 },
+  { "title": "Vray", "niveau": "Goede Beheersing", "id": 4 },
+  { "title": "Photoshop", "niveau": "Volledige Beheersing", "id": 5 },
+  { "title": "Revit", "niveau": "Goede Beheersing", "id": 6 },
+  { "title": "Python", "niveau": "Goede Beheersing", "id": 7 },
+  { "title": "Javascript", "niveau": "Mattige Beheersing", "id": 8 }
+]

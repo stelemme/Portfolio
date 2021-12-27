@@ -1,7 +1,7 @@
-import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Deze functie geeft de navbar weer in de volledige app.
 
 const NavbarComponent = () => {
   return (

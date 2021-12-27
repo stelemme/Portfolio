@@ -1,75 +1,129 @@
-import React from "react";
 import { Form, Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useGetProjects } from "../hooks/useGetProjects"
 
-const ProjectForm = () => {
+// Deze component zorgt ervoor dat het nieuwe project kan worden toegevoegd.
+
+export const ProjectForm = () => {
+  // De constanten worden geïnitieerd.
   const [title, setTitle] = useState("");
   const [vak, setVak] = useState("");
   const [jaar, setJaar] = useState("");
   const [info, setInfo] = useState("");
   const [vaardigheden, setVaardigheden] = useState("");
-  const [selectedFile, setSelectedFile] = useState("");
+  const [selectedFile1, setSelectedFile1] = useState("");
+  const [selectedFile2, setSelectedFile2] = useState("");
+  const [selectedFile3, setSelectedFile3] = useState("");
 
-  const [projects, setProjects] = useState([]);
+  // De bestaande projecten worden eerst ingelezen via een GET request van de solid server.
+  const { projects } = useGetProjects()
 
-  useEffect(() => {
-    async function fetchData(e) {
-      const requestOptions = {
-        methode: "GET",
-      };
-      const data = await fetch(
-        "http://localhost:5000/stef/data/projects.json",
-        requestOptions
-      );
-      const body = await data.json();
-      setProjects(body);
-    }
-    fetchData();
-  }, []);
-
+  // Deze async functie wordt uitgevoerd wanneer het project formulier wordt ingediend.
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const id = projects.length + 1;
+      alert(`Het project is nu toegevoegd. Bedankt.`);
 
-      var requestOptionsPicture = {
+      // Elk project krijgt een unieke ID.
+      const id = projects.length + 1;
+      
+      // Er worden drie variabelen geïniteerd die vervolgens via een 
+      // PUT request de drie foto's die bij dit project horen zullen uploaden naar de solid server.
+      var requestOptionsPicture1 = {
         method: "PUT",
         headers: { "Content-Type": "image/jpeg" },
-        body: selectedFile,
+        body: selectedFile1,
+      };
+      var requestOptionsPicture2 = {
+        method: "PUT",
+        headers: { "Content-Type": "image/jpeg" },
+        body: selectedFile2,
+      };
+      var requestOptionsPicture3 = {
+        method: "PUT",
+        headers: { "Content-Type": "image/jpeg" },
+        body: selectedFile3,
       };
 
       await fetch(
-        `http://localhost:5000/stef/data/Ontwerp${id}.jpg`,
-        requestOptionsPicture
+        `http://localhost:5000/stef/data/Ontwerp${id}_1.jpg`,
+        requestOptionsPicture1
+      );
+      await fetch(
+        `http://localhost:5000/stef/data/Ontwerp${id}_2.jpg`,
+        requestOptionsPicture2
+      );
+      await fetch(
+        `http://localhost:5000/stef/data/Ontwerp${id}_3.jpg`,
+        requestOptionsPicture3
       );
 
-      const foto = `http://localhost:5000/stef/data/Ontwerp${id}.jpg`
-      const project = { title, vak, jaar, info, foto, vaardigheden, id };
-      projects.push(project);
+      const foto1 = `http://localhost:5000/stef/data/Ontwerp${id}_1.jpg`;
+      const foto2 = `http://localhost:5000/stef/data/Ontwerp${id}_2.jpg`;
+      const foto3 = `http://localhost:5000/stef/data/Ontwerp${id}_3.jpg`;
 
+      // Het nieuwe project wordt in een constante gestoken en bij de al bestaande projecten gevoegd.
+      const project = {
+        title,
+        vak,
+        jaar,
+        info,
+        foto1,
+        foto2,
+        foto3,
+        vaardigheden,
+        id,
+      };
+      projects.push(project);
+      
+      // Alle projecten (bestaande + nieuwe) worden via een PUT request naar de solid server gestuurd.
       var requestOptions = {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(projects),
         redirect: "follow",
       };
-      console.log("data send")
+      console.log("data send");
 
-      await fetch("http://localhost:5000/stef/data/projects.json", requestOptions)
-        } catch (error) {
-      console.log(error)
+      await fetch(
+        "http://localhost:5000/stef/data/projects.json",
+        requestOptions
+      );
+    } catch (error) {
+      console.log(error);
     }
   };
 
+  // Dit is de code voor het formulier waar het nieuwe project wordt ingevoerd.
   return (
-    <Form required>
+    <Form>
       <Form.Group controlId="foto" className="my-3" aria-required>
-        <Form.Label>Foto (Formaat 3000 x 1500)</Form.Label>
+        <Form.Label>Foto 1 (Formaat 3000 x 1500)</Form.Label>
         <Form.Control
-          accept='.jpg,.jpeg'
+          accept=".jpg,.jpeg"
           type="file"
           onChange={(e) => {
-            setSelectedFile(e.target.files[0])
+            setSelectedFile1(e.target.files[0]);
+          }}
+        />
+      </Form.Group>
+      <Form.Group controlId="foto" className="my-3" aria-required>
+        <Form.Label>Foto 2 (Formaat 3000 x 1500)</Form.Label>
+        <Form.Control
+          accept=".jpg,.jpeg"
+          type="file"
+          onChange={(e) => {
+            setSelectedFile2(e.target.files[0]);
+          }}
+        />
+      </Form.Group>
+      <Form.Group controlId="foto" className="my-3" aria-required>
+        <Form.Label>Foto 3 (Formaat 3000 x 1500)</Form.Label>
+        <Form.Control
+          accept=".jpg,.jpeg"
+          type="file"
+          onChange={(e) => {
+            setSelectedFile3(e.target.files[0]);
           }}
         />
       </Form.Group>
@@ -80,7 +134,6 @@ const ProjectForm = () => {
           placeholder="Naam van het Project"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
-          maxLength={40}
         />
       </Form.Group>
       <Form.Group className="my-3">
@@ -90,7 +143,6 @@ const ProjectForm = () => {
           placeholder="Vak waarvoor het Project gemaakt werd"
           onChange={(e) => setVak(e.target.value)}
           value={vak}
-          maxLength={40}
         />
       </Form.Group>
       <p>Academiejaar</p>
@@ -148,4 +200,3 @@ const ProjectForm = () => {
   );
 };
 
-export { ProjectForm };

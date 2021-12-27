@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Rubik's Home",
+    "vak": "Architectuurontwerp 1",
+    "jaar": "1e Bachelor Ingenieurswetenschappen Architectuur",
+    "info": "In deze eerste architectuuropdrachten moesten we een wooncomlex ontwerpen opgebouwd uit standaard 'units'. Er werden 7 'units' geschakeld voor een groot appartement en 5 voor een klein.",
+    "foto1": "http://localhost:5000/stef/data/Ontwerp1_1.jpg",
+    "foto2": "http://localhost:5000/stef/data/Ontwerp1_2.jpg",
+    "foto3": "http://localhost:5000/stef/data/Ontwerp1_3.jpg",
+    "vaardigheden": "Geen digitale vaardigheden gebruikt",
+    "id": 1
+  },
+  {
+    "title": "Walpoort",
+    "vak": "Architectuurontwerp 1",
+    "jaar": "1e Bachelor Ingenieurswetenschappen Architectuur",
+    "info": "Een kavel in het hart van Gent, met uitzicht op de Krook werd omgevormd tot een tweepersoonswoning. Vanuit de straatkant werd er een doorzicht ontworpen naar het water deze plek kreeg de naam 'waterkamer'.",
+    "foto1": "http://localhost:5000/stef/data/Ontwerp2_1.jpg",
+    "foto2": "http://localhost:5000/stef/data/Ontwerp2_2.jpg",
+    "foto3": "http://localhost:5000/stef/data/Ontwerp2_3.jpg",
+    "vaardigheden": "Autocad",
+    "id": 2
+  },
+  {
+    "title": "Verdwenen Stad",
+    "vak": "Architectuurontwerp 1",
+    "jaar": "1e Bachelor Ingenieurswetenschappen Architectuur",
+    "info": "In een onbekend stadsdeel werd er een cirkel weggesneden, deze opgave bestond eruit om in de cirkel een nieuw bruisend stadsdeel te maken. Er werd een groot plein met twee woon/kantoor torens ontworpen.",
+    "foto1": "http://localhost:5000/stef/data/Ontwerp3_1.jpg",
+    "foto2": "http://localhost:5000/stef/data/Ontwerp3_2.jpg",
+    "foto3": "http://localhost:5000/stef/data/Ontwerp3_3.jpg",
+    "vaardigheden": "Autocad",
+    "id": 3
+  },
+  {
+    "title": "BioBoorgooien",
+    "vak": "Architectuurontwerp 2",
+    "jaar": "2e Bachelor Ingenieurswetenschappen Architectuur",
+    "info": "Dit ontwerp is een antwoord op de vraag 'Hoe kunnen we landbouw in de stad brengen?'. Er werd een bioboerderij/hostel ontworpen in een voormalig overstromingsgebied (meersen) aan de rand van de stad Gent.",
+    "foto1": "http://localhost:5000/stef/data/Ontwerp4_1.jpg",
+    "foto2": "http://localhost:5000/stef/data/Ontwerp4_2.jpg",
+    "foto3": "http://localhost:5000/stef/data/Ontwerp4_3.jpg",
+    "vaardigheden": "Autocad, Rhino, Photoshop",
+    "id": 4
+  },
+  {
+    "title": "Charles Vandenhove Paviljoen",
+    "vak": "Building Informatics",
+    "jaar": "3e Bachelor Ingenieurswetenschappen Architectuur",
+    "info": "Bij deze opgave in het kader van de hedendaagse digitale architectuurwereld werd een bestaand gebouw getransformeerd in een bim-model. Het gebouw dat gemodelleerd werd is het Charles Vandenhove Paviljoen in Gent.",
+    "foto1": "http://localhost:5000/stef/data/Ontwerp5_1.jpg",
+    "foto2": "http://localhost:5000/stef/data/Ontwerp5_2.jpg",
+    "foto3": "http://localhost:5000/stef/data/Ontwerp5_3.jpg",
+    "vaardigheden": "Autocad, Revit, Rhino",
+    "id": 5
+  },
+  {
+    "title": "Pluswonen",
+    "vak": "Architectuurontwerp 3",
+    "jaar": "3e Bachelor Ingenieurswetenschappen Architectuur",
+    "info": "Een project waarbij er een kavel in Gent omgevormd werd tot een woning waarin verschillende speciale gezinssituaties mogelijk zijn. Deze werden mogelijk gemaakt door de toevoeging van een zogenaamde 'plusruimte'.",
+    "foto1": "http://localhost:5000/stef/data/Ontwerp6_1.jpg",
+    "foto2": "http://localhost:5000/stef/data/Ontwerp6_2.jpg",
+    "foto3": "http://localhost:5000/stef/data/Ontwerp6_3.jpg",
+    "vaardigheden": "Autocad, Photoshop",
+    "id": 6
+  },
+  {
+    "title": "Dienstencentrum",
+    "vak": "Architectuurontwerp 3",
+    "jaar": "3e Bachelor Ingenieurswetenschappen Architectuur",
+    "info": "Een oud internaatsgebouw aan de Gentse Coupure werd verbouwd tot een dienstencentrum. Dit 2000 vierkante meter dienstencentrum, waar zich sociale diensten bevonden zoals eet en was gelegenheid, werd de ontmoetingsplaats van de buurt. ",
+    "foto1": "http://localhost:5000/stef/data/Ontwerp7_1.jpg",
+    "foto2": "http://localhost:5000/stef/data/Ontwerp7_2.jpg",
+    "foto3": "http://localhost:5000/stef/data/Ontwerp7_3.jpg",
+    "vaardigheden": "Autocad, Photoshop",
+    "id": 7
+  },
+  {
+    "title": "Woodification - Leicester Engineering Building",
+    "vak": "Masterstudio D",
+    "jaar": "1e Master Ingenieurswetenschappen Architectuur",
+    "info": "In het kader van de milieu impact van onze gebouwen, werd een brutalistisch gebouw uit de 20e eeuw 'gewoodifyed'. Dit betekend dat het milieubelastende beton en staal werd vervangen door hout. ",
+    "foto1": "http://localhost:5000/stef/data/Ontwerp8_1.jpg",
+    "foto2": "http://localhost:5000/stef/data/Ontwerp8_2.jpg",
+    "foto3": "http://localhost:5000/stef/data/Ontwerp8_3.jpg",
+    "vaardigheden": "Autocad, Rhino, Vray, Photoshop",
+    "id": 8
+  }
+]

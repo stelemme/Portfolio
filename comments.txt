@@ -1,0 +1,37 @@
+Comments Portfolio
+
+Opmaak
+
+  Voor de opmaak van mijn site heb ik gebruik gemaakt van react bootstrap (https://react-bootstrap.github.io/).
+  Elk onderdeel bestaat uit react bootstrap componenten, deze heb ik overal 'in place' bewerkt. Ik heb dus geen gebruik gemaakt van externe css files. 
+  Dit heb ik gedaan omdat het mij hanidger leek om elk component apart te kunnen bewerken. Hierdoor had ik naar mijn gevoel meer controle over de opmaak.
+  Het idee achter de algemene opmaak is dat het moet lijken op een typisch architectuurplan, witte achtergrond met zwarte lijnen die het grid aanduiden
+  waarbinnen zich de componenten bevinden. 
+
+Structuur
+
+  De folderstructuur werkt als volgt: Ik heb 5 pagina's (in de page folder) waarin verschillende componenten (in de components folder) gelinkt zijn.
+  Deze 5 pagina's worden dan via een index.js file in de App.js file gerenderd samen met de Navbar. Alle data die gebruikt wordt in mijn site,
+  zoals foto's en json data, wordt opgeslaan op mijn solid server (dit is op dit moment bijgevoegd in de folder 'data').
+
+Functionaliteiten
+
+  Mijn grootste focus binnen dit project was de link met de solid server. De data van de server halen was mijn eerste doel.
+  Foto's worden van de server gehaald via hun source (die zich bevindt in de json string). De json data daarintegen wordt via een useEffect hook 
+  en een async function van de server gehaald met een 'GET' request. Data van de server halen was echter het 'eenvoudige' gedeelte. 
+  Ik wou ook dingen kunnen bijschrijven in de json files. Bijschrijven was niet mogelijk (nog steeds geen idee waarom) 
+  dus heb ik opnieuw dezelfde methode gebruikt om data van de server te halen om er dan vervolgens de nieuwe data aan toe te voegen. 
+  Deze data (oude + nieuwe) wordt dan via een handleSubmit async function in een 'PUT' request gestopt en vervolgens naar de server gestuurd. 
+  Hetzelfde gebeurt met de foto's, ook deze worden in diezelfde handleSubmit function via een 'PUT' request naar de server gestuurd.
+
+  Bij de carousel op de home pagina heb ik een extra functie toegevoegd die een bepaald aantal random elementen neemt uit een array. 
+  Zo kan ik telkens als de site gerefreshed wordt 3 random projecten renderen. De ingelezen data (in de vorm van een array) 
+  wordt telkens afgebeeld met een map function.
+
+  Op de contact pagina heb ik een contact formulier toegevoegd. Dit formulier kan emails versturen naar mijn eigen email adress. 
+  Het verstuurd ook een automatisch gegenereerd antwoord naar de afzender. Test dit gerust eens uit. Deze functie werkt via een site 
+  genaamd https://www.emailjs.com/?src=email-footer.
+
+
+
+Stef Lemmens

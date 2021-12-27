@@ -1,48 +1,26 @@
-import React from 'react';
-import { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap";
+import { useGetProjects } from "../hooks/useGetProjects"
 
+//Deze component toont op de home page 3 random projecten in een carousel
 
-const ProjectCarousel = () => {
-  const [projects, setProjects] = useState([])
+export const ProjectCarousel = () => {
 
-  useEffect(() => {
-    async function fetchData(e) {
-      const requestOptions = {
-          methode: "GET"
-      }
-      const data = await fetch('http://localhost:5000/stef/data/projects.json', requestOptions)
-      const body = await data.json()
-      setProjects(getRandom(body, 3))
-    }
-    fetchData()
-  }, [])
+  // De bestaande projecten worden eerst ingelezen via een GET request van de solid server.
+  // Vervolgens worden er 3 random projecten gekozen uit deze bestaande projecten (zie useGetProjects).
+  const { randomProjects } = useGetProjects()
   
-  function getRandom(arr, n) {
-    var result = new Array(n),
-      len = arr.length,
-      taken = new Array(len);
-    while (n--) {
-      var x = Math.floor(Math.random() * len);
-      result[n] = arr[x in taken ? taken[x] : x];
-      taken[x] = --len in taken ? taken[len] : len;
-    }
-    return result;
-  }
-
-  return ( 
+  // Dit is de code die de carousel afbeeldt op de home page via een map functie.
+  return (
     <Carousel className="my-3">
-      {projects.map((project) => (
+      {randomProjects.map((project) => (
         <Carousel.Item key={project.id}>
           <img
-          className="d-block w-100"
-          src={project.foto}
-          alt="First slide"
+            className="d-block w-100"
+            src={project.foto1}
+            alt="First slide"
           />
         </Carousel.Item>
       ))}
     </Carousel>
   );
-}
-
-export {ProjectCarousel}
+};
