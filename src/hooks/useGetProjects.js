@@ -37,4 +37,3 @@ export const useGetProjects = () => {
 
   return { projects, randomProjects };
 };
-

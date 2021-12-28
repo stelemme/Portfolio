@@ -12,19 +12,20 @@ Structuur
 
   De folderstructuur werkt als volgt: Ik heb 5 pagina's (in de page folder) waarin verschillende componenten (in de components folder) gelinkt zijn.
   Deze 5 pagina's worden dan via een index.js file in de App.js file gerenderd samen met de Navbar. Alle data die gebruikt wordt in mijn site,
-  zoals foto's en json data, wordt opgeslaan op mijn solid server (dit is op dit moment bijgevoegd in de folder 'data').
+  zoals foto's en json data, wordt opgeslaan op mijn solid server (dit is op dit moment bijgevoegd in de folder 'data'). Voor het inladen van 
+  data via een useEffect hook heb ik custom hooks gemaakt in de hooks folder.
 
 Functionaliteiten
 
   Mijn grootste focus binnen dit project was de link met de solid server. De data van de server halen was mijn eerste doel.
   Foto's worden van de server gehaald via hun source (die zich bevindt in de json string). De json data daarintegen wordt via een useEffect hook 
-  en een async function van de server gehaald met een 'GET' request. Data van de server halen was echter het 'eenvoudige' gedeelte. 
-  Ik wou ook dingen kunnen bijschrijven in de json files. Bijschrijven was niet mogelijk (nog steeds geen idee waarom) 
-  dus heb ik opnieuw dezelfde methode gebruikt om data van de server te halen om er dan vervolgens de nieuwe data aan toe te voegen. 
+  en een async function van de server gehaald met een 'GET' request (zie hooks folder). Data van de server halen was echter het 'eenvoudige' gedeelte. 
+  Ik wou ook dingen kunnen bijschrijven in de json files. Data bijschrijven was niet mogelijk (nog steeds geen idee waarom) 
+  dus heb ik dezelfde methode als hierboven gebruikt om de data van de server te halen om er dan vervolgens de nieuwe data aan toe te voegen. 
   Deze data (oude + nieuwe) wordt dan via een handleSubmit async function in een 'PUT' request gestopt en vervolgens naar de server gestuurd. 
   Hetzelfde gebeurt met de foto's, ook deze worden in diezelfde handleSubmit function via een 'PUT' request naar de server gestuurd.
 
-  Bij de carousel op de home pagina heb ik een extra functie toegevoegd die een bepaald aantal random elementen neemt uit een array. 
+  Bij de carousel op de home pagina heb ik een extra functie toegevoegd (in de useGetProjects file) die een bepaald aantal random elementen neemt uit een array. 
   Zo kan ik telkens als de site gerefreshed wordt 3 random projecten renderen. De ingelezen data (in de vorm van een array) 
   wordt telkens afgebeeld met een map function.
 

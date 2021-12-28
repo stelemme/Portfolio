@@ -1,28 +1,12 @@
-import { useState, useEffect } from "react";
 import { ListGroup } from "react-bootstrap";
+import { useGetSkills } from "../hooks/useGetSkills"
 
 // Deze component geeft alle vaardigheden in een list terug voor de bestaande vaardigeden in de database.
 
 export const SkillList = () => {
-  const [skills, setSkills] = useState([]);
 
   // De bestaande vaardigheden worden eerst ingelezen via een GET request van de solid server.
-  useEffect(() => {
-    async function fetchData(e) {
-      const requestOptions = {
-        methode: "GET",
-      };
-      const data = await fetch(
-        "http://localhost:5000/stef/data/skills.json",
-        requestOptions
-      );
-      const body = await data.json();
-      setSkills(body);
-    }
-    fetchData();
-  }, []);
-
-  console.log(skills);
+  const { skills } = useGetSkills()
 
   // Dit is de code die de vaardigheden afbeeldt op de vaardigheden page via een map functie.
   return (

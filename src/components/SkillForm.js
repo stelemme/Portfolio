@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useGetSkills } from "../hooks/useGetSkills"
 
 // Deze component zorgt ervoor dat de nieuwe vaardigheid kan worden toegevoegd.
 
@@ -7,23 +8,9 @@ export const SkillForm = () => {
   // De constanten worden geïnitieerd.
   const [title, setTitle] = useState("");
   const [niveau, setNiveau] = useState("");
-  const [skills, setSkills] = useState([]);
 
   // De bestaande vaardigheden worden eerst ingelezen via een GET request van de solid server.
-  useEffect(() => {
-    async function fetchData(e) {
-      const requestOptions = {
-        methode: "GET",
-      };
-      const data = await fetch(
-        "http://localhost:5000/stef/data/skills.json",
-        requestOptions
-      );
-      const body = await data.json();
-      setSkills(body);
-    }
-    fetchData();
-  }, []);
+  const { skills } = useGetSkills()
 
   // Deze async functie wordt uitgevoerd wanneer het vaardigheid formulier wordt ingediend.
   const handleSubmit = async (event) => {
