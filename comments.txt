@@ -30,7 +30,7 @@ Functionaliteiten
   wordt telkens afgebeeld met een map function.
 
   Op de contact pagina heb ik een contact formulier toegevoegd. Dit formulier kan emails versturen naar mijn eigen email adress. 
-  Het verstuurd ook een automatisch gegenereerd antwoord naar de afzender. Test dit gerust eens uit. Deze functie werkt via een site 
+  Het verstuurt ook een automatisch gegenereerd antwoord naar de afzender. Test dit gerust eens uit. Deze functie werkt via een site 
   genaamd https://www.emailjs.com/?src=email-footer.
 
 
